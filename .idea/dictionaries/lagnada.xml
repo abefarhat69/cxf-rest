@@ -3,7 +3,12 @@
     <words>
       <w>beanvalidation</w>
       <w>cxfrest</w>
+      <w>dbcp</w>
       <w>jaxrs</w>
+      <w>jdmk</w>
+      <w>jmxri</w>
+      <w>jmxtools</w>
+      <w>springsource</w>
     </words>
   </dictionary>
 </component>
