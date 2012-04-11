@@ -28,6 +28,9 @@
     <logger name="org.springframework.web">
         <level value="info"/>
     </logger>
+    <logger name="org.springframework.aop">
+        <level value="debug"/>
+    </logger>
 
     <logger name="org.hibernate">
         <level value="warn"/>
