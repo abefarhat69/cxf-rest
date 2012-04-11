@@ -16,6 +16,18 @@
 
     <context:component-scan base-package="com.lagnada.demo.cxfrest"/>
 
+    <bean id="secureAnnotationsInterceptor" class="org.apache.cxf.interceptor.security.SecureAnnotationsInterceptor">
+        <property name="securedObject" ref="accountController" />
+    </bean>
+    <bean id="simpleAuthorizingFilter" class="com.lagnada.demo.cxfrest.filter.CustomSimpleAuthorizingFilter">
+        <property name="interceptor" ref="secureAnnotationsInterceptor"/>
+    </bean>
+<!--
+    <bean id="simpleAuthorizingFilter" class="org.apache.cxf.jaxrs.security.SimpleAuthorizingFilter">
+        <property name="interceptor" ref="secureAnnotationsInterceptor"/>
+    </bean>
+-->
+
     <jaxrs:server id="restService" address="/">
         <jaxrs:serviceBeans>
             <ref bean="accountsController"/>
@@ -28,7 +40,11 @@
         <jaxrs:providers>
             <ref bean="jsonProvider"/>
             <ref bean="jaxbProvider"/>
+            <ref bean="simpleAuthorizingFilter"/>
         </jaxrs:providers>
+        <jaxrs:inInterceptors>
+            <!--<bean class="com.lagnada.demo.cxfrest.controller.MyInterceptor"/>-->
+        </jaxrs:inInterceptors>
     </jaxrs:server>
 
     <bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>

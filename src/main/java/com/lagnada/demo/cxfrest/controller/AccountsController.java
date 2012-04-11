@@ -11,14 +11,14 @@ import javax.ws.rs.core.UriBuilder;
 import java.lang.reflect.Method;
 import java.net.URI;
 
-@Produces({"application/json", "application/xml"})
-@Consumes({"application/json", "application/xml"})
+@Produces({"application/json"})
+@Consumes({"application/json"})
 @Service("accountsController")
 public class AccountsController {
 
     @POST
     @Path("/accounts")
-    public Response getAccount(Account account) {
+    public Response createAccount(Account account) {
         Method getAccount = getMethod(AccountController.class, "getAccount", String.class);
         URI newAccountUri = UriBuilder.fromResource(AccountController.class)
                 .path(getAccount)
