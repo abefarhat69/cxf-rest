@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="200e4f89-a7a7-4fc2-9aa1-5cdf6880b48e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_5_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_5_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_3_0_5_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/controller/BeforeAdvice.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/controller/ControllerAspect.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/controller/MyInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/filter/CustomSimpleAuthorizingFilter.java" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_aop_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_asm_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_beans_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_context_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_context_support_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_core_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_expression_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_jdbc_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_orm_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_test_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_tx_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_web_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\.idea\libraries\Maven__org_springframework_spring_webmvc_3_1_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\sandbox\git\cxf-rest\src\main\webapp\WEB-INF\jetty-env.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/cxf_rest_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/cxf_rest_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxf-rest.iml" afterPath="$PROJECT_DIR$/cxf-rest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/controller/AccountController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/controller/AccountController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/controller/AccountsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/controller/AccountsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/app-ctx.xml" afterPath="$PROJECT_DIR$/src/main/resources/app-ctx.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.xml" afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/controllers.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/controllers.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml" />
-    </list>
+    <list default="true" id="200e4f89-a7a7-4fc2-9aa1-5cdf6880b48e" name="Default" comment="" />
     <ignored path="cxf-rest.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -175,10 +142,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomSimpleAuthorizingFilter.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CustomSimpleAuthorizingFilter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/filter/CustomSimpleAuthorizingFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="951" selection-end="951" vertical-scroll-proportion="0.0">
+            <state line="24" column="40" selection-start="950" selection-end="950" vertical-scroll-proportion="0.41906476">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -222,10 +189,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleAuthorizingInterceptor.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SimpleAuthorizingInterceptor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-bundle-jaxrs/2.5.2/cxf-bundle-jaxrs-2.5.2-sources.jar!/org/apache/cxf/interceptor/security/SimpleAuthorizingInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="45" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.42446044">
+            <state line="39" column="35" selection-start="1566" selection-end="1566" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1149,13 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-bundle-jaxrs/2.5.2/cxf-bundle-jaxrs-2.5.2-sources.jar!/org/apache/cxf/interceptor/security/SecureAnnotationsInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="2985" selection-end="2985" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar!/org/apache/geronimo/mail/util/StringBufferOutputStream.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="0.12806027">
@@ -1163,19 +1123,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/filter/CustomSimpleAuthorizingFilter.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-bundle-jaxrs/2.5.2/cxf-bundle-jaxrs-2.5.2-sources.jar!/org/apache/cxf/interceptor/security/SecureAnnotationsInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="951" selection-end="951" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="75" column="0" selection-start="2985" selection-end="2985" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-bundle-jaxrs/2.5.2/cxf-bundle-jaxrs-2.5.2-sources.jar!/org/apache/cxf/interceptor/security/SimpleAuthorizingInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="45" selection-start="1605" selection-end="1605" vertical-scroll-proportion="0.42446044">
+        <state line="39" column="35" selection-start="1566" selection-end="1566" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lagnada/demo/cxfrest/filter/CustomSimpleAuthorizingFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="40" selection-start="950" selection-end="950" vertical-scroll-proportion="0.41906476">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
