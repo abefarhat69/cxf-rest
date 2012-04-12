@@ -5,6 +5,7 @@ import org.apache.cxf.interceptor.security.AccessDeniedException;
 import org.apache.cxf.jaxrs.ext.RequestHandler;
 import org.apache.cxf.jaxrs.model.ClassResourceInfo;
 import org.apache.cxf.message.Message;
+import org.apache.cxf.security.SecurityContext;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
@@ -16,6 +17,7 @@ public class CustomSimpleAuthorizingFilter implements RequestHandler {
 
     public Response handleRequest(Message m, ClassResourceInfo resourceClass) {
         try {
+            m.put(SecurityContext.class, new CustomSecurityContext());
             interceptor.handleMessage(m);
             return null;
         } catch (AccessDeniedException ex) {

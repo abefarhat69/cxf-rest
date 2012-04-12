@@ -9,6 +9,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
 import java.util.Date;
 
 @Path("/account")
@@ -18,9 +20,10 @@ public class AccountController {
 
     @GET
     @Path("/{id}")
-    @RolesAllowed("hello")
-    public Response getAccount(@PathParam("id") String id) {
+    @RolesAllowed("ROLE_USER")
+    public Response getAccount(@PathParam("id") Long id) {
         Account account = new Account();
+        account.setId(id);
         account.setUsername("john-doe");
         account.setFirstName("John");
         account.setLastName("Doe");
@@ -30,6 +33,12 @@ public class AccountController {
                 .withDayOfMonth(21).toDate();
         account.setBirthDate(birthDate);
         account.setEnabled(true);
+
+        URI self = UriBuilder.fromUri("http://localhost:8080/api/account")
+                .path(AccountController.class, "getAccount")
+                .build(id);
+        account.setSelf(self);
+
         return Response.ok(account).build();
     }
 

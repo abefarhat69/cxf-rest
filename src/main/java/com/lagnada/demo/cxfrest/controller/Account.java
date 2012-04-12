@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.net.URI;
 import java.util.Date;
 
 @XmlRootElement(name = "account")
@@ -13,6 +14,9 @@ public class Account {
 
     @XmlAttribute
     private String username;
+
+    @XmlElement
+    private Long id;
 
     @XmlElement(name = "firstName")
     private String firstName;
@@ -25,6 +29,16 @@ public class Account {
 
     @XmlElement(name = "isEnabled")
     private Boolean enabled;
+
+    private URI self;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -64,5 +78,13 @@ public class Account {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public URI getSelf() {
+        return self;
+    }
+
+    public void setSelf(URI self) {
+        this.self = self;
     }
 }
