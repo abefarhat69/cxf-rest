@@ -1,0 +1,10 @@
+*.class
+workspace.xml
+
+# hello #
+
+# Packages My Change Again and Again#
+*.jar
+*.war
+*.ear
+
