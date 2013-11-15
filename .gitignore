@@ -1,5 +1,6 @@
 *.class
 workspace.xml
+.idea
 
 # hello #
 
