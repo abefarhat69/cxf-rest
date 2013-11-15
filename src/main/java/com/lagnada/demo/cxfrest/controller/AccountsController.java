@@ -1,6 +1,7 @@
 package com.lagnada.demo.cxfrest.controller;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -10,6 +11,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import java.lang.reflect.Method;
 import java.net.URI;
+import java.util.Random;
 
 @Produces({"application/json"})
 @Consumes({"application/json"})
@@ -19,7 +21,12 @@ public class AccountsController {
     @POST
     @Path("/accounts")
     public Response createAccount(Account account) {
-        Method getAccount = getMethod(AccountController.class, "getAccount", String.class);
+        Assert.notNull(account);
+        Assert.isNull(account.getId(), "Account.id not allowed.");
+
+        Method getAccount = getMethod(AccountController.class, "getAccount", Long.class);
+        Long newAccountId = Long.valueOf(new Random().nextInt(1000));
+        account.setId(newAccountId);
         URI newAccountUri = UriBuilder.fromResource(AccountController.class)
                 .path(getAccount)
                 .build(1);
