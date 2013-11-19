@@ -1,4 +1,4 @@
-package com.lagnada.demo.cxfrest.controller;
+package com.lagnada.demo.cxfrest.rest;
 
 import org.apache.cxf.interceptor.Fault;
 import org.apache.cxf.message.Message;

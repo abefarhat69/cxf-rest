@@ -1,4 +1,4 @@
-package com.lagnada.demo.cxfrest.controller;
+package com.lagnada.demo.cxfrest.rest;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class BeforeAdvice {
 
-    @Before("com.lagnada.demo.cxfrest.controller.ControllerAspect.inControllerMethod()")
+    @Before("com.lagnada.demo.cxfrest.rest.ControllerAspect.inControllerMethod()")
     //@Before("execution(* com.lagnada.demo.cxfrest.*.*(..))")
     public void doAccessCheck() {
         "".toString();

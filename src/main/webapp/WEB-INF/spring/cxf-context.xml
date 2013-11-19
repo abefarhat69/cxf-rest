@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+
+    <mvc:annotation-driven/>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+
+    <context:component-scan base-package="com.lagnada.demo.cxfrest"/>
+
+    <!--<bean id="secureAnnotationsInterceptor" class="org.apache.cxf.interceptor.security.SecureAnnotationsInterceptor">-->
+    <!--<property name="securedObject" ref="accountController"/>-->
+    <!--</bean>-->
+    <!--<bean id="simpleAuthorizingFilter" class="com.lagnada.demo.cxfrest.filter.CustomSimpleAuthorizingFilter">-->
+    <!--<property name="interceptor" ref="secureAnnotationsInterceptor"/>-->
+    <!--</bean>-->
+    <!--
+        <bean id="simpleAuthorizingFilter" class="org.apache.cxf.jaxrs.security.SimpleAuthorizingFilter">
+            <property name="interceptor" ref="secureAnnotationsInterceptor"/>
+        </bean>
+    -->
+
+    <jaxrs:server id="restService" address="/">
+        <jaxrs:serviceBeans>
+            <ref bean="accountsController"/>
+            <ref bean="accountController"/>
+            <ref bean="webLogonController"/>
+        </jaxrs:serviceBeans>
+        <jaxrs:extensionMappings>
+            <entry key="json" value="application/json"/>
+            <entry key="xml" value="application/xml"/>
+        </jaxrs:extensionMappings>
+        <jaxrs:providers>
+            <ref bean="jsonProvider"/>
+            <ref bean="jaxbProvider"/>
+            <!--<ref bean="simpleAuthorizingFilter"/>-->
+        </jaxrs:providers>
+        <jaxrs:inInterceptors>
+            <!--<bean class="com.lagnada.demo.cxfrest.controller.MyInterceptor"/>-->
+        </jaxrs:inInterceptors>
+    </jaxrs:server>
+
+    <bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
+    <bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider"/>
+
+</beans>

@@ -1,53 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
-            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <import resource="classpath:META-INF/cxf/cxf.xml"/>
-
-    <mvc:annotation-driven/>
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
-
+    <!--<context:property-placeholder location="classpath:application.properties"/>-->
+    <context:annotation-config/>
     <context:component-scan base-package="com.lagnada.demo.cxfrest"/>
 
-    <!--<bean id="secureAnnotationsInterceptor" class="org.apache.cxf.interceptor.security.SecureAnnotationsInterceptor">-->
-        <!--<property name="securedObject" ref="accountController"/>-->
-    <!--</bean>-->
-    <!--<bean id="simpleAuthorizingFilter" class="com.lagnada.demo.cxfrest.filter.CustomSimpleAuthorizingFilter">-->
-        <!--<property name="interceptor" ref="secureAnnotationsInterceptor"/>-->
-    <!--</bean>-->
-    <!--
-        <bean id="simpleAuthorizingFilter" class="org.apache.cxf.jaxrs.security.SimpleAuthorizingFilter">
-            <property name="interceptor" ref="secureAnnotationsInterceptor"/>
-        </bean>
-    -->
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
 
-    <jaxrs:server id="restService" address="/">
-        <jaxrs:serviceBeans>
-            <ref bean="accountsController"/>
-            <ref bean="accountController"/>
-        </jaxrs:serviceBeans>
-        <jaxrs:extensionMappings>
-            <entry key="json" value="application/json"/>
-            <entry key="xml" value="application/xml"/>
-        </jaxrs:extensionMappings>
-        <jaxrs:providers>
-            <ref bean="jsonProvider"/>
-            <ref bean="jaxbProvider"/>
-            <!--<ref bean="simpleAuthorizingFilter"/>-->
-        </jaxrs:providers>
-        <jaxrs:inInterceptors>
-            <!--<bean class="com.lagnada.demo.cxfrest.controller.MyInterceptor"/>-->
-        </jaxrs:inInterceptors>
-    </jaxrs:server>
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+    </mvc:interceptors>
 
-    <bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
-    <bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider"/>
+    <!--<mvc:resources mapping="/css/**" location="/css/"/>-->
+    <!--<mvc:resources mapping="/bootstrap/**" location="/bootstrap/"/>-->
+
+
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en"/>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+    </bean>
 
 </beans>

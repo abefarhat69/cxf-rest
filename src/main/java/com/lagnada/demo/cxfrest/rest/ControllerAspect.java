@@ -1,4 +1,4 @@
-package com.lagnada.demo.cxfrest.controller;
+package com.lagnada.demo.cxfrest.rest;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
