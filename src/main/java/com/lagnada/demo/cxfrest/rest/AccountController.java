@@ -8,9 +8,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
-import java.net.URI;
+import javax.ws.rs.core.UriInfo;
 import java.util.Date;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
@@ -20,6 +20,9 @@ import static javax.ws.rs.core.MediaType.APPLICATION_XML;
 @Produces({APPLICATION_JSON, APPLICATION_XML})
 @Service("accountController")
 public class AccountController {
+
+    @Context
+    private UriInfo uriInfo;
 
     @GET
     @Path("/{id}")
@@ -37,10 +40,7 @@ public class AccountController {
         account.setBirthDate(birthDate);
         account.setEnabled(true);
 
-        URI self = UriBuilder.fromUri("http://localhost:8080/api/account")
-                .path(AccountController.class, "getAccount")
-                .build(id);
-        account.setSelf(self);
+        account.setSelf(uriInfo.getRequestUri());
 
         return Response.ok(account).build();
     }

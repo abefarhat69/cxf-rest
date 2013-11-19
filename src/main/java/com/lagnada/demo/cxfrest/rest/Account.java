@@ -15,11 +15,11 @@ public class Account {
     @XmlAttribute
     private String username;
 
-    @XmlElement
-    private Long id;
-
     @XmlAttribute
     private URI self;
+
+    @XmlElement
+    private Long id;
 
     @XmlElement(name = "firstName")
     private String firstName;
