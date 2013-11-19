@@ -7,16 +7,22 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
-import java.lang.reflect.Method;
+import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.Random;
 
-@Produces({"application/json"})
-@Consumes({"application/json"})
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import static javax.ws.rs.core.MediaType.APPLICATION_XML;
+
+@Consumes({APPLICATION_JSON, APPLICATION_XML})
+@Produces({APPLICATION_JSON, APPLICATION_XML})
 @Service("accountsController")
 public class AccountsController {
+
+    @Context
+    private UriInfo uriInfo;
 
     @POST
     @Path("/accounts")
@@ -24,23 +30,15 @@ public class AccountsController {
         Assert.notNull(account);
         Assert.isNull(account.getId(), "Account.id not allowed.");
 
-        Method getAccount = getMethod(AccountController.class, "getAccount", Long.class);
         Long newAccountId = Long.valueOf(new Random().nextInt(1000));
         account.setId(newAccountId);
-        URI newAccountUri = UriBuilder.fromResource(AccountController.class)
-                .path(getAccount)
-                .build(1);
+        URI newAccountUri = uriInfo.getBaseUriBuilder()
+                .path("/account/{id}")
+                .build(newAccountId);
+        account.setSelf(newAccountUri);
         return Response.created(newAccountUri)
                 .entity(account)
                 .build();
-    }
-
-    private Method getMethod(Class<?> clazz, String methodName, Class<?>... parameterTypes) {
-        try {
-            return clazz.getMethod(methodName, parameterTypes);
-        } catch (Exception e) {
-            throw (new RuntimeException(e));
-        }
     }
 
 }
